@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <h3 class = "mt-5">Edit Expense</h3>
+            <form action="/edit" method = "post">
+                <input type="hidden" value = "{{expense.id}}" name = "id" id=" ">
+                <div class ="form group">
+                    <label for="">Date</label>
+                    <input class = "form-control" value = "{{expense.date}}" type = "date" name = "date" id = "date">
+
+                </div>
+                <div class ="form group">
+                    <label for="">Expense Name</label>
+                    <input class = "form-control" value = "{{expense.expensename}}" type = "text" name = "expensename" id = "expensename">
+
+                </div>
+                <div class ="form group">
+                    <label for="">Expense Amount</label>
+                    <input class = "form-control" value = "{{expense.amount}}" type = "text" name = "amount" id = "amount">
+
+                </div>
+                <div class = "form group">
+                    <label for="">Category</label>
+                    <select class = "form-control" value = "{{expense.category}}" name = "category" id = "category">
+                        <option value = "food">Food</option>
+                        <option value = "entertainment">Entertainment</option>
+                        <option value = "stationary">Stationary</option>
+                        <option value = "business">Business</option>
+                        <option value = "travel">Travel</option>
+                        <option value = "groceries">Groceries</option>
+                        <option value = "medical">Medical</option>
+                        <option value = "other">other</option>
+                    </select>               
+                </div>
+                <input class = "btn btn-danger" type = "submit" value = "Update" id="">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
